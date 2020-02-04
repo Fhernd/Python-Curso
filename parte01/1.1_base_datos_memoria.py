@@ -21,3 +21,16 @@ for t in tablas:
     print('Nombre objeto BD:', t[1])
     print('Nombre tabla:', t[2])
     print('Sentencia SQL:', t[4])
+
+datos = [('1001', 'Edward', 'Ortiz', 'Informática', 5),
+('1002', 'Daniela', 'Ordoñez', 'Arte', 3),
+('1003', 'Germán', 'Meneses', 'Programación', 7),
+('1004', 'Oliva', 'Urbano', 'Música', 5)]
+
+try:
+    sql = '''INSERT INTO estudiante (carnet, nombre, apellido, carrera, semestre) VALUES (?, ?, ?, ?, ?)'''
+
+    cursor.executemany(sql, datos)
+except sqlite3.IntegrityError as e:
+    print('Error SQLite:', e.args[0])
+

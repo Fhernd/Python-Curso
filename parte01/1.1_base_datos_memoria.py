@@ -4,7 +4,7 @@ import pandas as pd
 conexion = sqlite3.connect(':memory:')
 cursor = conexion.cursor()
 
-sql_tabla_estudiante = "CREATE TABLE estudiante(carnet TEXT, nombre TEXT, apelildo TEXT, carrera TEXT, semestre INT, CONSTRAINT carnet_pk PRIMARY KEY (carnet))"
+sql_tabla_estudiante = "CREATE TABLE estudiante(carnet TEXT, nombre TEXT, apellido TEXT, carrera TEXT, semestre INT, CONSTRAINT carnet_pk PRIMARY KEY (carnet))"
 
 cursor.execute(sql_tabla_estudiante)
 
@@ -22,6 +22,8 @@ for t in tablas:
     print('Nombre tabla:', t[2])
     print('Sentencia SQL:', t[4])
 
+print()
+
 datos = [('1001', 'Edward', 'Ortiz', 'Informática', 5),
 ('1002', 'Daniela', 'Ordoñez', 'Arte', 3),
 ('1003', 'Germán', 'Meneses', 'Programación', 7),
@@ -34,3 +36,7 @@ try:
 except sqlite3.IntegrityError as e:
     print('Error SQLite:', e.args[0])
 
+sql = "SELECT * FROM estudiante WHERE carnet='1004'"
+cursor.execute(sql)
+resultado = cursor.fetchall();
+print(resultado)

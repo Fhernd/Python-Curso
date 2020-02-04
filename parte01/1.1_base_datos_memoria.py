@@ -36,7 +36,16 @@ try:
 except sqlite3.IntegrityError as e:
     print('Error SQLite:', e.args[0])
 
+conexion.commit()
+
 sql = "SELECT * FROM estudiante WHERE carnet='1004'"
 cursor.execute(sql)
 resultado = cursor.fetchall();
 print(resultado)
+
+print()
+
+# Convertir datos de la BD en un archivo CSV:
+sql = "SELECT * FROM estudiante"
+df = pd.read_sql_query(sql, conexion)
+df.to_csv('estudiantes.csv')

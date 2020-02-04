@@ -36,3 +36,9 @@ for p in datos_programadores['programadores']:
     print('Lenguaje: %s' % p['lenguaje'])
     print('Email: %s' % p['email'])
     print()
+
+print()
+
+# Persistencia en un archivo binario:
+with open('parte01/programadores.pkl', 'wb') as f:
+    pickle.dump(datos, f, protocol=pickle.HIGHEST_PROTOCOL)

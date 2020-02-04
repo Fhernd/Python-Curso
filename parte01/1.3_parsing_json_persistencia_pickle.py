@@ -16,5 +16,23 @@ datos['programadores'].append(juan)
 
 print(len(datos['programadores']))
 
+# Escribe los datos en un archivo JSON:
 with open('parte01/programadores.json', 'w') as f:
     json.dump(datos, f)
+
+print()
+
+# Lectura de los datos de un archivo JSON:
+with open('parte01/programadores.json', 'r') as f:
+    datos_programadores = json.load(f)
+
+print(len(datos_programadores['programadores']))
+
+for p in datos_programadores['programadores']:
+    print('ID: %i' % p['id'])
+    print('Nombre: %s' % p['nombre'])
+    print('Apellido: %s' % p['apellido'])
+    print('Especialidad: %s' % p['especialidad'])
+    print('Lenguaje: %s' % p['lenguaje'])
+    print('Email: %s' % p['email'])
+    print()

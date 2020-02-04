@@ -48,4 +48,4 @@ print()
 # Convertir datos de la BD en un archivo CSV:
 sql = "SELECT * FROM estudiante"
 df = pd.read_sql_query(sql, conexion)
-df.to_csv('estudiantes.csv')
+df.to_csv('parte01/estudiantes.csv', index=False)

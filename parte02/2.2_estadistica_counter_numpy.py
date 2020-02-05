@@ -1,5 +1,6 @@
 from collections import Counter
 import numpy as np
+from scipy import stats
 
 lista_letras = ['t', 'u', 't', 'w', 'x', 'x', 'w', 't', 'y', 'y', 'z']
 contador = Counter(lista_letras)
@@ -51,3 +52,8 @@ print('Promedio: %f' % promedio)
 print('Mediana: %f' % mediana)
 print('Mínimo: %f' % minimo)
 print('Máximo: %f' % maximo)
+
+print()
+
+moda = stats.mode(conteos)
+print('Moda: {}'.format(moda.mode[0]))

@@ -37,3 +37,18 @@ for n1 in numeros_1:
 
 print(len(interseccion))
 print(interseccion)
+
+print()
+
+# Solución con listas de comprensión:
+interseccion = []
+resultado = [n1 for n2 in numeros_2 for n1 in numeros_1 if n1 == n2 and n1 not in interseccion]
+
+print(len(resultado))
+print(resultado)
+
+print()
+
+resultado = set(numeros_1) & set(numeros_2)
+print(len(resultado))
+print(resultado)

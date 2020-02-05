@@ -21,3 +21,19 @@ print()
 cadena = 'tutwxxwtyyz'
 contador = Counter(cadena)
 print(contador)
+
+print()
+
+print(contador['x'])
+print(contador.most_common(3))
+
+print()
+
+for k, v in contador.most_common():
+    print('Llave: {} - Valor: {}'.format(k, v))
+
+print()
+
+conteos = [v for k, v in contador.most_common()]
+print(len(conteos))
+print(conteos)

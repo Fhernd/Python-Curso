@@ -37,3 +37,17 @@ print()
 conteos = [v for k, v in contador.most_common()]
 print(len(conteos))
 print(conteos)
+
+print()
+
+# Otras operaciones estadísticas:
+
+promedio = np.mean(conteos)
+mediana = np.median(conteos)
+minimo = np.min(conteos)
+maximo = np.max(conteos)
+
+print('Promedio: %f' % promedio)
+print('Mediana: %f' % mediana)
+print('Mínimo: %f' % minimo)
+print('Máximo: %f' % maximo)

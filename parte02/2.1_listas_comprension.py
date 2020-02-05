@@ -15,3 +15,10 @@ for n in numeros:
 print(type(pares_triplicados))
 print(len(pares_triplicados))
 print(pares_triplicados)
+
+print()
+
+pares_triplicados = [n * 3 for n in numeros if n % 2 == 0]
+print(type(pares_triplicados))
+print(len(pares_triplicados))
+print(pares_triplicados)

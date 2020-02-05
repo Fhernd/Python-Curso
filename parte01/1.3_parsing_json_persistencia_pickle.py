@@ -42,3 +42,19 @@ print()
 # Persistencia en un archivo binario:
 with open('parte01/programadores.pkl', 'wb') as f:
     pickle.dump(datos, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+# Lectura de un archivo binario:
+with open('parte01/programadores.pkl', 'rb') as f:
+    datos_deserializados = pickle.load(f)
+
+print(type(datos_deserializados))
+print(datos_deserializados)
+
+for p in datos_deserializados['programadores']:
+    print('ID: %i' % p['id'])
+    print('Nombre: %s' % p['nombre'])
+    print('Apellido: %s' % p['apellido'])
+    print('Especialidad: %s' % p['especialidad'])
+    print('Lenguaje: %s' % p['lenguaje'])
+    print('Email: %s' % p['email'])
+    print()

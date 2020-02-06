@@ -14,3 +14,7 @@ def fn3():
     print('Inicio: fn3')
     gevent.sleep(0)
     print('Fin: fn3')
+
+funciones = [gevent.spawn(fn1), gevent.spawn(fn2), gevent.spawn(fn3)]
+
+gevent.joinall(funciones)

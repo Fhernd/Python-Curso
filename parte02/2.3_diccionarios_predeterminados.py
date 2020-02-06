@@ -26,3 +26,16 @@ print(conteo_lenguajes)
 print(conteo_lenguajes['Python'])
 print(conteo_lenguajes['C'])
 print(conteo_lenguajes['Kotlin'])
+
+print()
+
+# Crear un diccionario predeterminado con valores:
+puntajes = defaultdict(int, Edward=80, Daniela=85, Oliva=90)
+print(len(puntajes))
+print(puntajes['Edward'])
+print(puntajes['Daniela'])
+print(puntajes['Oliva'])
+print(puntajes['Germán'])
+
+puntajes['Germán'] = 75
+print(puntajes['Germán'])

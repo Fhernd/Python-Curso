@@ -39,3 +39,8 @@ print(puntajes['Germán'])
 
 puntajes['Germán'] = 75
 print(puntajes['Germán'])
+
+print()
+
+for k, v in conteo_lenguajes.items():
+    print('Llave: {} - Valor: {}'.format(k, v))
